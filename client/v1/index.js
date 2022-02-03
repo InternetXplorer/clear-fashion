@@ -32,7 +32,8 @@ console.log(MY_FAVORITE_BRANDS[0]);
 // I can find on these e-shops
 // 2. Log the variable
 
-
+var tshirt_link = "https://www.loom.fr/collections/tous-les-vetements/products/le-t-shirt";
+console.log("tshirt link : " + tshirt_link);
 
 
 
@@ -45,9 +46,13 @@ console.log(MY_FAVORITE_BRANDS[0]);
  * 👕
  */
 
+console.log(marketplace)
+
+
 // 🎯 TODO: Number of products
 // 1. Create a variable and assign it the number of products
 // 2. Log the variable
+
 
 
 // 🎯 TODO: Brands name
