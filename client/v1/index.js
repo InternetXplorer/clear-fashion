@@ -46,13 +46,14 @@ console.log("tshirt link : " + tshirt_link);
  * 👕
  */
 
-console.log(marketplace)
 
 
 // 🎯 TODO: Number of products
 // 1. Create a variable and assign it the number of products
 // 2. Log the variable
 
+var num_products = marketplace.length;
+console.log("Number of products : " + num_products)
 
 
 // 🎯 TODO: Brands name
@@ -61,28 +62,85 @@ console.log(marketplace)
 // 3. Log how many brands we have
 
 
+var brand_names = [];
+for(var i in marketplace){
+  if(!brand_names.includes(marketplace[i].brand)){
+    brand_names.push(marketplace[i].brand);
+  }
+}
+console.log("brand_names : " + brand_names);
+console.log("Number of brands : " + brand_names.length);
+
 // 🎯 TODO: Sort by price
 // 1. Create a function to sort the marketplace products by price
 // 2. Create a variable and assign it the list of products by price from lowest to highest
 // 3. Log the variable
 
 
+function sort_products_on_price(products, lowest_first){
+  var sorted_products = Array.from(products);
+  if(lowest_first){
+    sorted_products.sort((a, b) => (a.price > b.price) ? 1 : -1);
+  }
+  else{
+    sorted_products.sort((a, b) => (a.price < b.price) ? 1 : -1);
+  }
+  return sorted_products;
+}
+var sorted_products_price = sort_products_on_price(marketplace, true);
+console.log("sorted products on price :");
+console.log(sorted_products_price);
+
 // 🎯 TODO: Sort by date
 // 1. Create a function to sort the marketplace objects by products date
 // 2. Create a variable and assign it the list of products by date from recent to old
 // 3. Log the variable
+
+function sort_products_on_date(products, oldest_first){
+  var sorted_products = Array.from(products);
+  if(oldest_first){
+    sorted_products.sort((a, b) => (new Date(a.date) > new Date(b.date)) ? 1 : -1);
+  }
+  else{
+    sorted_products.sort((a, b) => (new Date(a.date) < new Date(b.date)) ? 1 : -1);
+  }
+  return sorted_products;
+}
+var sorted_products_date = sort_products_on_date(marketplace, false);
+console.log("sorted products on date from recent to old :");
+console.log(sorted_products_date);
 
 
 // 🎯 TODO: Filter a specific price range
 // 1. Filter the list of products between 50€ and 100€
 // 2. Log the list
 
+function filter_price_range(products, low_interval, high_interval){
+  var filtered_products = [];
+  for(var i in products){
+    if(products[i].price >= low_interval && products[i].price <= high_interval){
+      filtered_products.push(products[i]);
+    }
+  }
+  return filtered_products;
+}
+var filtered_products = filter_price_range(marketplace, 50, 100);
+filtered_products = sort_products_on_price(filtered_products);
+console.log("filtered_products between 50€ and 100€ price (also sorted) :");
+console.log(filtered_products);
+
+
 
 // 🎯 TODO: Average price
 // 1. Determine the average price of the marketplace
 // 2. Log the average
 
-
+var average_price = 0;
+for(var i in marketplace){
+  average_price += marketplace[i].price;
+}
+average_price /=marketplace.length;
+console.log("Average price : ", average_price)
 
 
 
@@ -109,17 +167,38 @@ console.log(marketplace)
 // 2. Log the variable
 // 3. Log the number of products by brands
 
+var brands = {};
+for (var i in brand_names){
+  brands[brand_names[i]] = [];
+}
+for (var i in marketplace){
+  brands[marketplace[i].brand].push(marketplace[i]);
+}
+console.log("brands : ");
+console.log(brands);
+
 
 // 🎯 TODO: Sort by price for each brand
 // 1. For each brand, sort the products by price, from highest to lowest
 // 2. Log the sort
 
+var sorted_brands_price = JSON.parse(JSON.stringify(brands));
+for (const key in sorted_brands_price) {
+  sorted_brands_price[key] = sort_products_on_price(sorted_brands_price[key], false);
+}
+console.log("sorted 'brands' object by price (high to low) :");
+console.log(sorted_brands_price);
 
 // 🎯 TODO: Sort by date for each brand
 // 1. For each brand, sort the products by date, from old to recent
 // 2. Log the sort
 
-
+var sorted_brands_date = JSON.parse(JSON.stringify(brands));
+for (const key in sorted_brands_date) {
+  sorted_brands_date[key] = sort_products_on_date(sorted_brands_date[key], true);
+}
+console.log("sorted 'brands' object by date (old to recent) :");
+console.log(sorted_brands_date);
 
 
 
