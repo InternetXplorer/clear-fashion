@@ -8,6 +8,7 @@ let currentPagination = {};
 // instantiate the selectors
 const selectShow = document.querySelector('#show-select');
 const selectPage = document.querySelector('#page-select');
+const selectBrand = document.querySelector('#brand-select');
 const sectionProducts = document.querySelector('#products');
 const spanNbProducts = document.querySelector('#nbProducts');
 
@@ -86,12 +87,20 @@ const renderPagination = pagination => {
   selectPage.selectedIndex = currentPage - 1;
 };
 
+async function countNbrNewProducts(){
+  const products = await fetchProducts(1, currentPagination.count);
+  
+
+}
+
 /**
  * Render page selector
  * @param  {Object} pagination
  */
 const renderIndicators = pagination => {
   const {count} = pagination;
+
+  
 
   spanNbProducts.innerHTML = count;
 };
@@ -100,7 +109,24 @@ const render = (products, pagination) => {
   renderProducts(products);
   renderPagination(pagination);
   renderIndicators(pagination);
+  console.log(currentPagination);
 };
+
+async function setBrandSelector() {
+  const products = await fetchProducts(1, currentPagination.count);
+  var brand_names = [];
+  for(var i in products.result){
+    if(!brand_names.includes(products.result[i].brand)){
+      brand_names.push(products.result[i].brand);
+    }
+  }
+
+  for(var k in brand_names){
+    selectBrand.options.add(new Option(brand_names[k], brand_names[k]))
+  }
+}
+
+
 
 /**
  * Declaration of all Listeners
@@ -120,5 +146,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   const products = await fetchProducts();
 
   setCurrentProducts(products);
+  setBrandSelector()
+
   render(currentProducts, currentPagination);
 });
+
+selectPage.addEventListener('change', async (event) => {
+  const products = await fetchProducts(parseInt(event.target.value), currentPagination.pageSize);
+
+  setCurrentProducts(products);
+  render(currentProducts, currentPagination);
+});
+
+// var pageLastProductOfSelectedBrand = 1;
+// var indexLastProductOfSelectedBrand = 1;
+
+// selectBrand.addEventListener('change', async (event) => {
+
+//   const products = await fetchProducts(1, currentPagination.pageSize);
+//   console.log(products);
+//   var selectedBrandProducts = {result:[], meta: products.meta};
+//   console.log(selectedBrandProducts);
+
+
+//   setCurrentProducts(products);
+//   render(currentProducts, currentPagination);
+// });
