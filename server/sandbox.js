@@ -1,11 +1,28 @@
 /* eslint-disable no-console, no-process-exit */
 const dedicatedbrand = require('./sources/dedicatedbrand');
+const montlimart_product_scraping = require('./sources/montlimart_product_scraping');
+const fs = require('fs');
 
 async function sandbox (eshop = 'https://www.dedicatedbrand.com/en/men/news') {
   try {
     console.log(`🕵️‍♀️  browsing ${eshop} source`);
 
-    const products = await dedicatedbrand.scrape(eshop);
+    var brand = eshop.match(/www.(.*).com/)[1]
+    console.log("brand : " + brand);
+
+    var products = null;
+    if(brand == "dedicatedbrand"){
+      products = await dedicatedbrand.scrape(eshop);
+    }
+    else if(brand == "montlimart"){
+      products = await montlimart_product_scraping.scrape(eshop);
+    }
+
+    var string_parsed_products = JSON.stringify(products, null, 1);
+    fs.writeFileSync(`${brand}_products.json`, string_parsed_products, error => {
+      if(error) throw error
+      console.log("Write complete");
+    });
 
     console.log(products);
     console.log('done');
