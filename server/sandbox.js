@@ -24,7 +24,7 @@ async function sandbox (eshop = 'https://www.dedicatedbrand.com/en/men/news') {
 
 
     var string_parsed_products = JSON.stringify(products, null, 1);
-    fs.writeFileSync(`${brand}_products.json`, string_parsed_products, error => {
+    fs.writeFileSync(`products/${brand}_products.json`, string_parsed_products, error => {
       if(error) throw error
       console.log("Write complete");
     });

@@ -16,13 +16,19 @@ const parse = data => {
         .text()
         .trim()
         .replace(/\s/g, ' ');
+
       const price = parseInt(
         $(element)
           .find('.productList-price')
           .text()
       );
 
-      return {name, price};
+      const brand = "dedicated"
+      var scraping_dateTime = new Date();
+      // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      // var scraping_dateTime = date+' '+time;
+      return {brand, name, price, scraping_dateTime};
     })
     .get();
 };

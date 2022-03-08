@@ -18,14 +18,28 @@ const parse = data => {
         // .attr("title")
         .trim()
         .replace(/\s/g, ' ');
-
+      
+      const color = $(element)
+        .find('.product-info span')
+        .text()
+        .trim()
+        .replace(/\s/g, ' ')
+        .replace(/\s\s+/g, ';')
+        .split(";")[0];
+      
       const price = parseInt(
         $(element)
           .find('.price')
           .text()
       );
-      
-      return {name, price};
+      var fullname = name + ' ' + color
+      const brand = "montlimart"
+      var scraping_dateTime = new Date();
+      // var today_isostring = today.toISOString();
+      // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      // var scraping_dateTime = date+' '+time;
+      return {brand, fullname, price, scraping_dateTime};
     })
     .get();
 };
