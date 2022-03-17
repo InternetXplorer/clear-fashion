@@ -71,7 +71,7 @@ module.exports.find = async (query, limit) => {
       limit = 0;
     }
 
-    let result = await collection.find(query).limit(limit).sort({"price": 1}).toArray();
+    let result = await collection.find(query).limit(limit).sort({"price": 1, "name": 1}).toArray();
     return result;
   } catch (error) {
     console.error('🚨 collection.find...', error);
@@ -79,11 +79,7 @@ module.exports.find = async (query, limit) => {
   }
 };
 
-/**
- * Find products based on query
- * @param  {Array}  query
- * @return {Array}
- */
+
  module.exports.findbyid = async id => {
   try {
     const db = await getDB();
@@ -92,10 +88,23 @@ module.exports.find = async (query, limit) => {
     const result = await collection.find({_id : objId})
     return result;
   } catch (error) {
-    console.error('🚨 collection.find...', error);
+    console.error('🚨 collection.findbyid...', error);
     return null;
   }
 };
+
+module.exports.countDocuments = async query => {
+  try {
+    const db = await getDB();
+    const collection = db.collection(MONGODB_COLLECTION);
+    const result = await collection.countDocuments(query);
+    return result;
+  } catch (error) {
+    console.error('🚨 collection.count...', error);
+    return null;
+  }
+};
+
 
 /**
  * Close the connection
