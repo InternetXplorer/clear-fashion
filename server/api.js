@@ -8,7 +8,6 @@ const PORT = 8092;
 
 const app = express();
 
-module.exports = app;
 
 app.use(require('body-parser').json());
 app.use(cors());
@@ -60,3 +59,5 @@ app.get('/products/:id', async (request, response) => {
   // console.log(product);
   response.status(200).json(product);
 });
+
+module.exports = app;
