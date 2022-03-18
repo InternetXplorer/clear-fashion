@@ -14,11 +14,11 @@ const spanNbProducts = document.querySelector('#nbProducts');
 
 /**
  * Set global value
- * @param {Array} result - products to display
+ * @param {Array} products - products to display
  * @param {Object} meta - pagination meta info
  */
-const setCurrentProducts = ({result, meta}) => {
-  currentProducts = result;
+const setCurrentProducts = ({products, meta}) => {
+  currentProducts = products;
   currentPagination = meta;
 };
 
@@ -32,15 +32,16 @@ const fetchProducts = async (page = 1, size = 12) => {
   try {
     const response = await fetch(
       // `https://clear-fashion-api.vercel.app?page=${page}&size=${size}`
-      `https://server-sooty-six.vercel.app/?size=${size}&page=${page}`
+      `https://server-sooty-six.vercel.app?size=${size}&page=${page}`
     );
     const body = await response.json();
-
+    // console.log(body);
     if (body.success !== true) {
       console.error(body);
       return {currentProducts, currentPagination};
     }
-
+    // console.log("body.data :");
+    // console.log(body.data);
     return body.data;
   } catch (error) {
     console.error(error);
@@ -56,11 +57,21 @@ const renderProducts = products => {
   const fragment = document.createDocumentFragment();
   const div = document.createElement('div');
   const template = products
+    // .map(product => {
+    //   return `
+    //   <div class="product" id=${product.uuid}>
+    //     <span>${product.brand}</span>
+    //     <a href="${product.link}">${product.name}</a>
+    //     <span>${product.price}</span>
+    //   </div>
+    // `;
+    // })
+    // .join('');
     .map(product => {
       return `
       <div class="product" id=${product.uuid}>
         <span>${product.brand}</span>
-        <a href="${product.link}">${product.name}</a>
+        <span>${product.name}</span>
         <span>${product.price}</span>
       </div>
     `;
@@ -113,12 +124,12 @@ const render = (products, pagination) => {
   console.log(currentPagination);
 };
 
-async function setBrandSelector() {
+async function setBrandSelector() { // A REFAIRE AVEC UNE QUERY DB DEDIEE A LA RECUP DES BRANDS, PLUTOT QUE CE BRICOLAGE
   const products = await fetchProducts(1, currentPagination.count);
   var brand_names = [];
-  for(var i in products.result){
-    if(!brand_names.includes(products.result[i].brand)){
-      brand_names.push(products.result[i].brand);
+  for(var i in products.products){
+    if(!brand_names.includes(products.products[i].brand)){
+      brand_names.push(products.products[i].brand);
     }
   }
 
@@ -145,7 +156,8 @@ selectShow.addEventListener('change', async (event) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const products = await fetchProducts();
-
+  // console.log("prods :");
+  // console.log(products);
   setCurrentProducts(products);
   setBrandSelector()
 
