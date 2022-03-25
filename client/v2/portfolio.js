@@ -9,8 +9,12 @@ let currentPagination = {};
 const selectShow = document.querySelector('#show-select');
 const selectPage = document.querySelector('#page-select');
 const selectBrand = document.querySelector('#brand-select');
+const selectSort = document.querySelector('#sort-select')
 const sectionProducts = document.querySelector('#products');
 const spanNbProducts = document.querySelector('#nbProducts');
+
+const api_domain = "https://server-sooty-six.vercel.app";
+// const api_domain = "http://localhost:8092";
 
 /**
  * Set global value
@@ -28,11 +32,39 @@ const setCurrentProducts = ({products, meta}) => {
  * @param  {Number}  [size=12] - size of the page
  * @return {Object}
  */
-const fetchProducts = async (page = 1, size = 12) => {
+const fetchProducts = async (page = 1, size = 12, brand=null, sort=null) => {
+  try {
+    let url = `${api_domain}/products?size=${size}&page=${page}`;
+    if(brand && brand != ""){
+      url = url + "&brand=" + brand;
+    }
+    if(sort && sort != ""){
+      url = url + "&sort=" + sort;
+    }
+    const response = await fetch(
+      url
+    );
+    const body = await response.json();
+    // console.log("body :")
+    // console.log(body);
+
+    if (body.success !== true) {
+      console.error(body);
+      return {currentProducts, currentPagination};
+    }
+    // console.log("body.data :");
+    // console.log(body.data);
+    return body.data;
+  } catch (error) {
+    console.error(error);
+    return {currentProducts, currentPagination};
+  }
+};
+
+const getBrandsList = async () => {
   try {
     const response = await fetch(
-      // `https://clear-fashion-api.vercel.app?page=${page}&size=${size}`
-      `https://server-sooty-six.vercel.app?size=${size}&page=${page}`
+      `${api_domain}/brandslist`
     );
     const body = await response.json();
     // console.log(body);
@@ -42,7 +74,7 @@ const fetchProducts = async (page = 1, size = 12) => {
     }
     // console.log("body.data :");
     // console.log(body.data);
-    return body.data;
+    return body.data.brands;
   } catch (error) {
     console.error(error);
     return {currentProducts, currentPagination};
@@ -68,15 +100,22 @@ const renderProducts = products => {
     // })
     // .join('');
     .map(product => {
+      // console.log(product)
       return `
-      <div class="product" id=${product.uuid}>
-        <span>${product.brand}</span>
-        <span>${product.name}</span>
-        <span>${product.price}</span>
+      <div class="product" id=${product._id}>
+        <div class="product-image">
+          <img src="${product.image_link}">
+        </div>
+        <div class="product-info">
+          <span class="brand">${product.brand}</span>
+          <a class="name" href="${product.product_link}"><span>${product.name}</span></a>
+          <span class="price">${product.price} €</span>
+        </div>
       </div>
     `;
     })
     .join('');
+
 
   div.innerHTML = template;
   fragment.appendChild(div);
@@ -99,11 +138,11 @@ const renderPagination = pagination => {
   selectPage.selectedIndex = currentPage - 1;
 };
 
-async function countNbrNewProducts(){
-  const products = await fetchProducts(1, currentPagination.count);
+// async function countNbrNewProducts(){
+//   const products = await fetchProducts(1, currentPagination.count);
   
 
-}
+// }
 
 /**
  * Render page selector
@@ -111,7 +150,6 @@ async function countNbrNewProducts(){
  */
 const renderIndicators = pagination => {
   const {count} = pagination;
-
   
 
   spanNbProducts.innerHTML = count;
@@ -124,37 +162,20 @@ const render = (products, pagination) => {
   console.log(currentPagination);
 };
 
-async function setBrandSelector() { // A REFAIRE AVEC UNE QUERY DB DEDIEE A LA RECUP DES BRANDS, PLUTOT QUE CE BRICOLAGE
-  const products = await fetchProducts(1, currentPagination.count);
-  var brand_names = [];
-  for(var i in products.products){
-    if(!brand_names.includes(products.products[i].brand)){
-      brand_names.push(products.products[i].brand);
-    }
-  }
+async function setBrandSelector() {
+  const brand_names = await getBrandsList();
 
-  for(var k in brand_names){
+  for(const k in brand_names){
     selectBrand.options.add(new Option(brand_names[k], brand_names[k]))
   }
 }
-
 
 
 /**
  * Declaration of all Listeners
  */
 
-/**
- * Select the number of products to display
- */
-selectShow.addEventListener('change', async (event) => {
-  const products = await fetchProducts(currentPagination.currentPage, parseInt(event.target.value));
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
-});
-
-document.addEventListener('DOMContentLoaded', async () => {
+ document.addEventListener('DOMContentLoaded', async () => {
   const products = await fetchProducts();
   // console.log("prods :");
   // console.log(products);
@@ -164,24 +185,55 @@ document.addEventListener('DOMContentLoaded', async () => {
   render(currentProducts, currentPagination);
 });
 
-selectPage.addEventListener('change', async (event) => {
-  const products = await fetchProducts(parseInt(event.target.value), currentPagination.pageSize);
+
+/**
+ * Select the number of products to display
+ */
+selectShow.addEventListener('change', async (event) => {
+  const products = await fetchProducts(currentPagination.currentPage, parseInt(event.target.value), brand, sort);
+
+  // a faire : regler le bug bizarre de pagination quand on change de show size.
+  setCurrentProducts(products);
+  // console.log("prods selectshow:");
+  // console.log(products);
+  render(currentProducts, currentPagination);
+});
+
+
+let brand = ""
+selectBrand.addEventListener('change', async (event) => {
+  brand = event.target.value;
+  const products = await fetchProducts(1, currentPagination.pageSize, event.target.value, sort);
+  // console.log(products);
+  // var selectedBrandProducts = {result:[], meta: products.meta};
+  // console.log(selectedBrandProducts);
+
 
   setCurrentProducts(products);
   render(currentProducts, currentPagination);
 });
 
-// var pageLastProductOfSelectedBrand = 1;
-// var indexLastProductOfSelectedBrand = 1;
+selectPage.addEventListener('change', async (event) => {
+  const products = await fetchProducts(parseInt(event.target.value), currentPagination.pageSize, brand, sort);
+  console.log("change page:")
+  console.log(selectBrand.selectedOption);
+  setCurrentProducts(products);
 
-// selectBrand.addEventListener('change', async (event) => {
+  // console.log("prods selectpage:");
+  // console.log(products);
+  render(currentProducts, currentPagination);
+});
 
-//   const products = await fetchProducts(1, currentPagination.pageSize);
-//   console.log(products);
-//   var selectedBrandProducts = {result:[], meta: products.meta};
-//   console.log(selectedBrandProducts);
+let sort = ""
+selectSort.addEventListener('change', async (event) => {
+  sort = event.target.value;
+  console.log(sort);
+  const products = await fetchProducts(1, currentPagination.pageSize, brand, sort);
+  // console.log(products);
+  // var selectedBrandProducts = {result:[], meta: products.meta};
+  // console.log(selectedBrandProducts);
 
 
-//   setCurrentProducts(products);
-//   render(currentProducts, currentPagination);
-// });
+  setCurrentProducts(products);
+  render(currentProducts, currentPagination);
+});
