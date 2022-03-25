@@ -1,6 +1,6 @@
 /* eslint-disable no-console, no-process-exit */
-const dedicatedbrand = require('./sites/dedicatedbrand');
-const loom = require('./sites/loom');
+const dedicatedbrand = require('./sites/prof_dedicatedbrand');
+const loom = require('./sites/prof_loom');
 const db = require('./db');
 
 async function sandbox () {

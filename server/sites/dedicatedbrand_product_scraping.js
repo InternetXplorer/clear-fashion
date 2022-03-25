@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
-
 /**
  * Parse webpage e-shop
  * @param  {String} data - html response
@@ -10,32 +9,33 @@ const cheerio = require('cheerio');
 const parse = data => {
   const $ = cheerio.load(data);
 
-  return $('.right-block')
+  return $('#filterItems .productList')
     .map((i, element) => {
       const name = $(element)
-        .find('.product-name')
+        .find('.productList-title')
         .text()
         .trim()
-        .replace(/\s/g, ' ')
-        .replace(/\s\s+/g, ';')
-        .split(";")[0];
+        .replace(/\s/g, ' ');
 
       const price = parseInt(
         $(element)
-          .find('.product-price')
+          .find('.productList-price')
           .text()
       );
       
-      const brand = "adresse"
-      var scraping_dateTime = new Date();
+      const product_link = 'https://www.dedicatedbrand.com' + $(element).find('.productList-link').attr('href');
+      
+      const image_link = $(element).find('.productList-image img').attr('data-src');
+
+      const brand = "dedicated"
+      let scraping_dateTime = new Date();
       // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       // var scraping_dateTime = date+' '+time;
-      return {brand, name, price, scraping_dateTime};
+      return {brand, name, price, product_link, image_link, scraping_dateTime};
     })
     .get();
 };
-
 
 /**
  * Scrape all the products for a given url page
@@ -48,10 +48,8 @@ module.exports.scrape = async url => {
 
     if (response.ok) {
       const body = await response.text();
-      var parsed_products = parse(body);
-      var string_parsed_products = JSON.stringify(parsed_products, null, 1);
 
-      return parsed_products;
+      return parse(body);
     }
 
     console.error(response);

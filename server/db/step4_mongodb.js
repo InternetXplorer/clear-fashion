@@ -13,7 +13,7 @@ async function insert(collection, products_filename){
     console.log(result);
 }
 
-async function delete_all_docs(collection){
+async function delete_all_docs(collection){ // doesn't work
     const result = await collection.deleteMany({price: {$gte:0}});
 
     console.log(result);
@@ -69,8 +69,9 @@ async function main(){
     const db =  client.db(MONGODB_DB_NAME);
     const collection = db.collection('products');
 
-    // const products_filename = "./products/_products.json";
-    // await insert(collection, products_filename); // inserts products' info from the given json file
+    brands = ['dedicatedbrand', 'adresse', 'montlimart']
+    const products_filename = `../products/${brands[2]}_products.json`;
+    await insert(collection, products_filename); // inserts products data from the given json file
 
     // delete_all_docs(collection);
 
@@ -82,8 +83,6 @@ async function main(){
     // await sorted_by_price(collection, true);
 
     // await sorted_by_scraping_date(collection, false);
-
-
 
 
     process.exit(0);
