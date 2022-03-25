@@ -1,290 +1,322 @@
 [
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Secret Garden",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.062Z"
+  "name": "Sweatshirt Malmoe Abbey Road Embroidery Grey Melange",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-abbey-road-embroidery-grey-melange-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7206_f5e4223b26-dedicated12552-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.637Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Save The Whales Honey Yellow",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.062Z"
+  "name": "Hoodie Falun Palm Leaves Beige",
+  "price": 89,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-palm-leaves-beige-safari",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7155_ae30e74a84-dedicated12080-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.637Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Lazer Cats",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.063Z"
+  "name": "Hoodie Falun Base Forest Green",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-forest-green-dark-forest",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7144_b602353800-dedicated5734-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.638Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm How to Draw an Owl",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.063Z"
+  "name": "Hoodie Falun Base Steel Blue",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-steel-blue-stonewash",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7147_67bab38578-dedicated5351-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.638Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Plastic Free Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.063Z"
+  "name": "Sweatshirt Malmoe Mandela Fist Black",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-mandela-fist-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7220_5cb604743b-dedicated5208-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.639Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Cat Crowd",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.063Z"
+  "name": "Sweatshirt Malmoe Beatles Logo Black",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-beatles-logo-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7214_c6464d0b2e-2021_22_04_dedicated_ss_22_4745-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.639Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Sea Turtles Forest Green",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Sweatshirt Malmoe Abbey Road Embroidery Terracotta Red",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-abbey-road-embroidery-terracotta-red-aragon",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7207_96e890ff10-dedicated4380-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.639Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Chinchillin",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Sweatshirt Malmoe Base Terracotta Red",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-terracotta-red-aragon",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7212_dd453a1f1c-2021_23_04_dedicated_ss_22_0906-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.640Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Anything Off-White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Sweatshirt Malmoe Base Honey Yellow",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-honey-yellow-beeswax",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7210_9f1562bb59-2021_23_04_dedicated_ss_22_1045-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.640Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Forbidden Fruit Off-White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Sweatshirt Malmoe Sea Turtles Forest Green",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-sea-turtles-forest-green-dark-forest",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7224_381f44ac86-2021_23_04_dedicated_ss_22_0771-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.640Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Work Hard Pizza White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Sweatshirt Malmoe Marker Bike Grey Melange",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-marker-bike-grey-melange-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7222_3e1d7162eb-dedicated6337-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.641Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm What I Saw White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.064Z"
+  "name": "Hoodie Falun Marker Bike Grey Melange",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-marker-bike-grey-melange-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7154_f7a7000645-dedicated6141-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.641Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Bike Crowd Off-White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Hoodie Falun Mandela Fist Black",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-mandela-fist-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7152_4d9589cc6e-dedicated6078-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.641Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm We Love Sumo White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Sweatshirt Malmoe Marker Bike Black",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-marker-bike-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7221_816adda460-dedicated-3765-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.641Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Beach Honey Yellow",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Hoodie Falun Base Dusty Purple",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-dusty-purple-valerian",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7143_a93f7f7cfd-dedicated5907-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.641Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Beach Off-White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Sweatshirt Malmoe Base Dusty Purple",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-dusty-purple-valerian",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7208_aca2325398-2021_22_04_dedicated_ss_22_4329-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.642Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Human Zoo Off-White",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Sweatshirt Malmoe Globe Steel Blue",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-globe-steel-blue-stonewash",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7219_7283058cce-2021_22_04_dedicated_ss_22_4535-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.642Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Human Zoo Mint",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Sweatshirt Malmoe Base Steel Blue",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-steel-blue-stonewash",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7211_7f3ded4eff-2021_22_04_dedicated_ss_22_4243-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.642Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Mandela Smile White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.065Z"
+  "name": "Sweatshirt Malmoe Globe Honey Yellow",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-globe-honey-yellow-beeswax",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7218_55ec3d0400-2021_23_04_dedicated_ss_22_0679-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.643Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Turnip the Beet White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.066Z"
+  "name": "Sweatshirt Malmoe Base Forest Green",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-forest-green-dark-forest",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7209_233fd37a41-2021_22_04_dedicated_ss_22_4414-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.643Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Your Mama Charcoal",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.066Z"
+  "name": "Sweatshirt Malmoe Globe Grey Melange",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-globe-grey-melange-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7217_3a3930e7c4-2021_23_04_dedicated_ss_22_0137-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.643Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Your Mama Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.066Z"
+  "name": "Hoodie Falun Marker Bike Black",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-marker-bike-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7153_f4a11c75d9-dedicated6233-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.643Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Wish Vegan Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Hoodie Falun Base Black",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-black-black",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7141_467ea4cbf8-dedicated_300620-3204-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.644Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Eat Beans Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Hoodie Falun Base Charcoal",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-charcoal-forged-iron",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7142_a073efa034-dedicatedcatalog_aw_218898-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.644Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Team Herbivore Charcoal",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Hoodie Falun Base Grey Melange",
+  "price": 69,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-base-grey-melange-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7145_318e8ea355-dedicated1914-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.644Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Team Herbivore White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Sweatshirt Malmoe Mushroom Grey Melange",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-mushroom-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6758_6c0b7c1d92-aw_21_dec32020_ses_218744-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.645Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Sea Turtles Forest Green",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Sweatshirt Malmoe Base Orange",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-orange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6749_23b73f87ea-aw_21_studio_day_2_26_11_202015347-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.645Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Save The Whales Honey Yellow",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Hoodie Falun Color Bike Grey Melange",
+  "price": 89,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-color-bike-grey-melange-grey_-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6604_753f4459b8-dedicatedcatalog_aw_219036-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.645Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Save The Whales Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.067Z"
+  "name": "Sweatshirt Malmoe Base Dark Green",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-dark-green",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6748_ce195335c0-aw_21_dec32020_ses_218992-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.645Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Plastic Free Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Base Burgundy",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-burgundy",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6746_ead437bf1a-__dedicated_aw_2111323_-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.646Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Plastic Free Charcoal",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Base Charcoal",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-charcoal",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6747_5eee53e7da-__dedicated_aw_2111949_-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.646Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Cut Waves Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Chanterelle Dark Green",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-chanterelle-dark-green",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6750_2de99a737e-aw_21_dec32020_ses_218951-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.646Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Crayon Globe Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Base Beige",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-beige",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6745_0d42ce3903-aw_21_dec32020_ses_218475-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.647Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm All Natural White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Local Planet Dark Green",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-local-planet-dark-green",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6757_dcacbfb6a9-aw_21_dec32020_ses_219072-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.647Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Pawsitivity Off-White",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Color Bike Charcoal",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-color-bike-charcoal",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6751_cda04afaf3-__dedicated_aw_2111785_-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.647Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Base Honey Yellow",
-  "price": 29,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Hoodie Falun Color Bike Charcoal",
+  "price": 89,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/hoodie-falun-color-bike-charcoal",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6603_35caf10733-dedicatedcatalog_aw_218898-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.648Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Base Steel Blue",
-  "price": 29,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Color Bike Off-White",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-color-bike-off-white-whisper-white",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/7054_3f84634cc4-2021_22_04_dedicated_ss_22_4637-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.648Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Base Terracotta Red",
-  "price": 29,
-  "scraping_dateTime": "2022-03-08T19:09:38.068Z"
+  "name": "Sweatshirt Malmoe Local Planet Navy",
+  "price": 79,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-local-planet-navy",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/3294_d0aa027f9b-dedicated1742-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.648Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Base Dusty Purple",
-  "price": 29,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
+  "name": "Sweatshirt Malmoe Base Navy",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-navy",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/5961_543f905573-dedicated_300620-3303-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.648Z"
  },
  {
   "brand": "dedicated",
-  "name": "T-shirt Stockholm Stitch Bike Mint",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Marker Bike Grey Melange",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Phoney Date",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Blue Birds",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Like Adults",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.069Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Give Me Some Space",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.070Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Going Gone Black",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.070Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Lazer Cats",
-  "price": 34,
-  "scraping_dateTime": "2022-03-08T19:09:38.070Z"
- },
- {
-  "brand": "dedicated",
-  "name": "T-shirt Stockholm Secret Garden",
-  "price": 39,
-  "scraping_dateTime": "2022-03-08T19:09:38.070Z"
+  "name": "Sweatshirt Malmoe Base Grey Melange",
+  "price": 59,
+  "product_link": "https://www.dedicatedbrand.com/en/men/sweats/sweatshirt-malmoe-base-grey-melange",
+  "image_link": "https://tshirtstore.centracdn.net/client/dynamic/images/6120_e3e68b8f6d-dedicated_300620-2901-ded-standard.jpg",
+  "scraping_dateTime": "2022-03-24T22:19:30.648Z"
  }
 ]
