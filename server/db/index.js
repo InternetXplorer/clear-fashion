@@ -62,7 +62,7 @@ module.exports.insert = async products => {
  * @param  {Array}  query
  * @return {Array}
  */
-module.exports.find = async (query, limit) => {
+module.exports.find = async (query, limit, price_sort_order) => {
   try {
     const db = await getDB();
     const collection = db.collection(MONGODB_COLLECTION);
@@ -70,11 +70,27 @@ module.exports.find = async (query, limit) => {
     if(!limit){
       limit = 0;
     }
+    if(!price_sort_order){
+      price_sort_order = 1;
+    }
 
-    let result = await collection.find(query).limit(limit).sort({"price": 1, "name": 1}).toArray();
+    let result = await collection.find(query).limit(limit).sort({"price": price_sort_order, "name": 1}).toArray();
     return result;
   } catch (error) {
     console.error('🚨 collection.find...', error);
+    return null;
+  }
+};
+
+module.exports.distinct = async (field) => {
+  try {
+    const db = await getDB();
+    const collection = db.collection(MONGODB_COLLECTION);
+
+    let result = await collection.distinct(field);
+    return result;
+  } catch (error) {
+    console.error('🚨 collection.distinct...', error);
     return null;
   }
 };
@@ -88,7 +104,7 @@ module.exports.find = async (query, limit) => {
     const result = await collection.find({_id : objId})
     return result;
   } catch (error) {
-    console.error('🚨 collection.findbyid...', error);
+    console.error('🚨 collection.find...', error);
     return null;
   }
 };

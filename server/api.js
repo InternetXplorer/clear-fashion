@@ -20,26 +20,28 @@ app.listen(PORT);
 console.log(`📡 Running on port ${PORT}`);
 
 
-async function structure_api_response(products, params){
-  let res = {"success": true, "data": {products, "meta": {}}};
-  if(params.page){
-    res.data.meta["currentPage"] = params.page;
+async function structure_api_response(data, params, addMetaData=true){
+  let res = {"success": true, data};
+  if(addMetaData){
+    res.data["meta"] = {}
+    if(params.page){
+      res.data.meta["currentPage"] = params.page;
+    }
+    else{
+      res.data.meta["currentPage"] = 1;
+    }
+    const count = await db.countDocuments(build_query_from_params(params));
+    res.data.meta["count"] = count;
+    
+    if(params.size){
+      res.data.meta["pageSize"] = params.size;
+      res.data.meta["pageCount"] = Math.ceil(count/params.size);
+    }
+    else{
+      res.data.meta["pageSize"] = data.length;
+      res.data.meta["pageCount"] = Math.ceil(count/data.length);
+    }
   }
-  else{
-    res.data.meta["currentPage"] = 1;
-  }
-  const count = await db.countDocuments(build_query_from_params(params));
-  res.data.meta["count"] = count;
-  
-  if(params.size){
-    res.data.meta["pagesize"] = params.size;
-    res.data.meta["pageCount"] = Math.ceil(count/params.size);
-  }
-  else{
-    res.data.meta["pagesize"] = products.length;
-    res.data.meta["pageCount"] = Math.ceil(count/products.length);
-  }
-  
   
   return res
 }
@@ -50,13 +52,13 @@ function build_query_from_params(params){
     query["brand"] = params.brand;
   }
   if(params.name){
-    query["name"] = params.brand;
+    query["name"] = params.name;
   }
   if(params.price){
-    if(params.sort && params.sort == "cheaper"){
+    if(params.sort && params.sort == "price-asc"){
       query["price"] = {$lte: params.price};
     }
-    else if(params.sort && params.sort == "expensive"){
+    else if(params.sort && params.sort == "price-desc"){
       query["price"] = {$gte: params.price};
     }
     else{
@@ -94,8 +96,8 @@ function keep_only_products_of_right_page(products, page, size){
 }
 
 
-
-app.get('/', async (request, response) => {
+// endpoint principal qui renvoie une liste de produits. possibilité de demander un size different, de choisir la page, de filtrer par marque, de trier par prix asc ou desc, ou de specifier un prix min ou max (selon le sort)
+app.get('/products', async (request, response) => {
 
   // let size = parseInt(request.query.size);
   // let page = parseInt(request.query.size);
@@ -108,13 +110,18 @@ app.get('/', async (request, response) => {
   if(!params.size){
     params.size = 12
   }
-  let products = [];
+  let price_sort_order = 1;
+  if(params.sort && params.sort == "price-desc"){
+    price_sort_order = -1;
+  }
+
+  let products = {"products": []};
   if(params.page && params.page > 1){
-    products = await db.find(query, params.size*params.page);
-    products = keep_only_products_of_right_page(products, params.page, params.size)
+    products.products = await db.find(query, params.size*params.page, price_sort_order);
+    products.products = keep_only_products_of_right_page(products.products, params.page, params.size)
   }
   else{
-    products = await db.find(query, params.size);
+    products.products = await db.find(query, params.size, price_sort_order);
   }
 
 
@@ -122,40 +129,43 @@ app.get('/', async (request, response) => {
   response.status(200).json(res);
 });
 
+//recherche d'un produit par name
 app.get('/products/name/:name', async (request, response) => {
   let params = parse_types_params(request.params);
   // const name = params.name;
   
   const query = build_query_from_params(params)
   console.log(params);
-  const product = await db.find(query);
-  response.status(200).json(product);
+  // console.log(query)
+  const product = {"product": await db.find(query)};
+  const res = await structure_api_response(product, {}, false);
+  response.status(200).json(res);
 });
 
-app.get('/products/search', async (request, response) => {
-  console.log(request.query)
-  let params = parse_types_params(request.query);
-  // const brand = params.brand;
-  // const price = parseInt(params.price);
 
-  if(!params.limit){
-    params.limit = 12
-  }
-  // let query = {};
-  // if(brand){
-  //   query["brand"] = brand;
-  // }
-  // if(price){
-  //   query["price"] = {$lte: price};
-  // }
-  let query = build_query_from_params(params);
-  console.log("query :");
-  console.log(query);
-  const products = await db.find(query, params.limit);
-  response.status(200).json(products);
+// app.get('/products/search', async (request, response) => { //   /!\ cet endpoint fait en fait la meme chose que l'endpoint principal /products/ donc je l'enleve il sert à rien de plus
+//   console.log(request.query)
+//   let params = parse_types_params(request.query);
+
+//   if(!params.limit){
+//     params.limit = 12
+//   }
+//   let query = build_query_from_params(params);
+//   console.log("query :");
+//   console.log(query);
+//   const products = await db.find(query, params.limit);
+//   response.status(200).json(products);
+// });
+
+//renvoie la liste des differentes marques presentent dans la BDD
+app.get('/brandslist', async (request, response) => {
+  const brands = {"brands": await db.distinct("brand")};
+  const res = await structure_api_response(brands, {}, false);
+  response.status(200).json(res);
 });
 
-// app.get('/products/:id', async (request, response) => {
+
+// app.get('/products/:id', async (request, response) => { // je n'arrive toujours pas à faire de requete recherche par id malheureusement donc j'enleve cet endpoint
 //   const id = request.params.id;
 //   const product = await db.findbyid(id);
 //   // console.log(product);
